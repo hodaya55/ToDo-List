@@ -1,3 +1,28 @@
-#all{
-    margin-left: 15px;
+.btn{
+    margin-left: 12px;
+background-color: #86a3f8; 
+color: white;
+font-size: 18px;
+border-radius: 12px;
+
+}
+
+body{
+    background-color:  #3667f499; 
+}
+.todo{
+    border-width: 2px;
+    border-style:solid;
+    margin: 70px; 
+    margin-left: 250px;
+    margin-top:0;
+    background-color: blanchedalmond;
+    width: 60%;
+    padding: 20px;
+    
+}
+h1{
+    text-align: center;
+    color:  #ffebcd; 
+    padding-top: 0;
 }

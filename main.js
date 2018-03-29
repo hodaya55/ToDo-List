@@ -1,10 +1,10 @@
 var list = document.getElementById('demo');
 var lastid = 0;
 
-function changeText2() {
+function Add() {
     var todo = document.getElementById('todo');
     if (todo.value != "") {
-        document.getElementById('boldStuff2').innerHTML = todo.value;
+        document.getElementById('todoVal').innerHTML = todo.value;
 
         var d = document.getElementById('date');
         d.innerHTML = Date().slice(0, 21);
@@ -31,8 +31,6 @@ function changeText2() {
         entry.appendChild(document.createTextNode("ToDo: " + todo.value));
         entry.setAttribute('id', 'item' + lastid);
 
-        $('#item' + lastid + '').css('color', 'red');
-
         // button of removing all the checked items
         var all = document.getElementById('all');
         all.setAttribute('onClick', 'removeAllDone()');
@@ -40,11 +38,13 @@ function changeText2() {
         lastid += 1;
         list.appendChild(entry);
 
+        $('li').css('color', 'blue');
+
     }
     else {
-        var text = document.getElementById('boldStuff2');
+        var text = document.getElementById('todoVal');
         text.style.color = "red";
-        document.getElementById('boldStuff2').innerHTML = "Please enter what you need to do.";
+        document.getElementById('todoVal').innerHTML = "Please enter what you need to do.";
     }
 
 

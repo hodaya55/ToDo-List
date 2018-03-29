@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,25 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>TODO</title>
 </head>
 
 <body>
-    Add TODO:
-    <input type="text" id="todo">
-    <input type='button' onclick='changeText2()' value='Add' />
-    <br>
-    <p>Your todo is: <b id='boldStuff2'></b> <br> Create on: 
-    <b id="date"> </b>
-    </p>
-    <p>ToDo List:</p>
-    <ul id="demo"></ul>
-    <button id="all">
-    remove all done
-    </button>
-    
-    
-    
+
+    <h1>To Do List </h1>
+    <div class="todo">
+
+        Add TODO:
+        <input type="text" id="todo">
+        <input class="btn" type='button' onclick='Add()' value='Add' />
+        <br>
+        <p>Your todo is: <span id='todoVal'></span>
+            <br> Create on:
+            <b id="date"> </b>
+        </p>
+        <p>ToDo List:</p>
+        <ul id="demo"></ul>
+        <button id="all" class="btn">
+            remove all done
+        </button>
+    </div>
+
+
 
 
 
