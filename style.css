@@ -9,6 +9,7 @@ border-radius: 12px;
 
 body{
     background-color:  #3667f499; 
+    font-family: 'Roboto', sans-serif;
 }
 .todo{
     border-width: 2px;
