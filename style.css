@@ -1,6 +1,6 @@
 .btn{
     margin-left: 12px;
-background-color: #86a3f8; 
+background-color: #6f1c1c; 
 color: white;
 font-size: 18px;
 border-radius: 12px;
@@ -8,7 +8,7 @@ border-radius: 12px;
 }
 
 body{
-    background-color:  #3667f499; 
+    background-color:  #6f1c1c; 
     font-family: 'Roboto', sans-serif;
 }
 .todo{

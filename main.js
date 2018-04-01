@@ -4,6 +4,7 @@ var lastid = 0;
 function Add() {
     var todo = document.getElementById('todo');
     if (todo.value != "") {
+        document.getElementById('todoVal').style.color = "black";
         document.getElementById('todoVal').innerHTML = todo.value;
 
         var d = document.getElementById('date');
@@ -22,10 +23,12 @@ function Add() {
         remove.appendChild(document.createTextNode("remove"));
         remove.setAttribute('onClick', 'removeName("' + 'item' + lastid + '")');
 
+         check.setAttribute("onClick", 'checkedGreen("' + 'item' + lastid + '")');
 
         entry.appendChild(check);
         entry.appendChild(remove);
         entry.appendChild(document.createTextNode(" Created on: " + Date().slice(0, 21) + "  "));
+
 
 
         entry.appendChild(document.createTextNode("ToDo: " + todo.value));
@@ -38,7 +41,7 @@ function Add() {
         lastid += 1;
         list.appendChild(entry);
 
-        $('li').css('color', 'blue');
+        // $('li').css('color', 'blue');
 
     }
     else {
@@ -59,6 +62,8 @@ function removeName(itemid) {
 
 
 function removeAllDone() {
+
+
     //get all the checked items into array
     var doneList = []
     $('input[type=checkbox]:checked').each(function () {
@@ -67,28 +72,49 @@ function removeAllDone() {
 
     console.log(doneList);
 
-    // remove all the checked items
-    for (var i in doneList) {
-        // var getID = doneList[i];
-        //console.log(getID);
-        removeName(doneList[i]);
-        // var item = document.getElementById(getID);
-        // list.removeChild(item);
+    if (doneList.length > 0) {
+        var returnVal = confirm("Are you sure?");
+        if (returnVal)
+            // remove all the checked items
+            for (var i in doneList)
+                removeName(doneList[i]);
     }
+    else
+        alert("There is nothing to remove. \n You don't selected from the list.");
+
+
 
 }
 
 
 // var done = [];
-    // done = $('#demo').find('input');
-    // console.log(done);
-    // for (var i in done) {
-    //     var getID = done[i].attributes['id'].value;
-    //     console.log(getID);
-    //     var item = document.getElementById(getID);
-    //     var val = done[i].attributes['checked'].value;
-    //     if (val)
-    //         list.removeChild(item);
-    //     // removeName(item);
+// done = $('#demo').find('input');
+// console.log(done);
+// for (var i in done) {
+//     var getID = done[i].attributes['id'].value;
+//     console.log(getID);
+//     var item = document.getElementById(getID);
+//     var val = done[i].attributes['checked'].value;
+//     if (val)
+//         list.removeChild(item);
+//     // removeName(item);
 
-    // }
+// }
+
+
+function checkedGreen(itemId) {
+
+        if ($('#' + itemId).prop('checked')) 
+         {
+            $('#' + itemId).css('color', 'black');
+            $('#' + itemId).prop('checked', false);
+         }
+        else 
+         {
+          
+
+           $('#' + itemId).css('color', 'green');
+           $('#' + itemId).prop('checked', true);
+         }
+
+}
