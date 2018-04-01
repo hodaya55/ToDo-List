@@ -1,4 +1,4 @@
-var list = document.getElementById('demo');
+var list = document.getElementById('list');
 var lastid = 0;
 
 function Add() {
@@ -17,20 +17,16 @@ function Add() {
         var check = document.createElement('input');
         check.setAttribute("type", "checkbox");
         check.setAttribute('id', 'item' + lastid);
+        check.setAttribute("onClick", 'checkedGreen("' + 'item' + lastid + '")');
+        entry.appendChild(check);
 
         // adding remove button near the list item
         var remove = document.createElement('button');
         remove.appendChild(document.createTextNode("remove"));
         remove.setAttribute('onClick', 'removeName("' + 'item' + lastid + '")');
-
-         check.setAttribute("onClick", 'checkedGreen("' + 'item' + lastid + '")');
-
-        entry.appendChild(check);
         entry.appendChild(remove);
+
         entry.appendChild(document.createTextNode(" Created on: " + Date().slice(0, 21) + "  "));
-
-
-
         entry.appendChild(document.createTextNode("ToDo: " + todo.value));
         entry.setAttribute('id', 'item' + lastid);
 
@@ -50,7 +46,6 @@ function Add() {
         document.getElementById('todoVal').innerHTML = "Please enter what you need to do.";
     }
 
-
 }
 
 
@@ -62,8 +57,6 @@ function removeName(itemid) {
 
 
 function removeAllDone() {
-
-
     //get all the checked items into array
     var doneList = []
     $('input[type=checkbox]:checked').each(function () {
@@ -80,9 +73,7 @@ function removeAllDone() {
                 removeName(doneList[i]);
     }
     else
-        alert("There is nothing to remove. \n You don't selected from the list.");
-
-
+        alert("There is nothing to remove.\nYou didn't select any line from the list.");
 
 }
 
@@ -104,17 +95,13 @@ function removeAllDone() {
 
 function checkedGreen(itemId) {
 
-        if ($('#' + itemId).prop('checked')) 
-         {
-            $('#' + itemId).css('color', 'black');
-            $('#' + itemId).prop('checked', false);
-         }
-        else 
-         {
-          
-
-           $('#' + itemId).css('color', 'green');
-           $('#' + itemId).prop('checked', true);
-         }
+    if ($('#' + itemId).prop('checked')) {
+        $('#' + itemId).css('color', 'black');
+        $('#' + itemId).prop('checked', false);
+    }
+    else {
+        $('#' + itemId).css('color', 'green');
+        $('#' + itemId).prop('checked', true);
+    }
 
 }

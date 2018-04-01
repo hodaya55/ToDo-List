@@ -14,12 +14,12 @@ body{
 .todo{
     border-width: 2px;
     border-style:solid;
-    margin: 70px; 
-    margin-left: 250px;
+    margin: 100px; 
+/*     margin-left: 250px; */
     margin-top:0;
     background-color: blanchedalmond;
-    width: 60%;
-    padding: 20px;
+/*     width: 60%; */
+    padding: 50px;
     
 }
 h1{
